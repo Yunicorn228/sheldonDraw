@@ -132,9 +132,12 @@ a:hover {
 .publication {
   display: flex;
   justify-content: space-evenly;
+  flex-direction: column;
+
   align-items: center;
   /* height: 200px; Sets a fixed height for the banner */
   overflow: hidden;
+  padding-bottom: 20px;
 }
 
 .publication img {
@@ -142,20 +145,52 @@ a:hover {
   max-width: 100%; /* Each image will not exceed 45% of the banner width */
   object-fit: contain; /* Maintains the aspect ratio */
   /* margin: 0 10px; Adds some spacing between the images */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover animations */
 }
+
+.publication img:first-child {
+  max-width: 100%;
+}
+
+.publication .publication_child {
+  max-width: 90%;
+}
+
+.publication .publication_child:hover {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+  cursor: pointer; /* Change cursor to indicate interactivity */
+}
+
 .experience {
   display: flex;
   justify-content: space-evenly;
+  flex-direction: column;
+
   align-items: center;
   /* height: 200px; Sets a fixed height for the banner */
   overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.experience img:first-child {
+  max-width: 100%;
 }
 
 .experience img {
   max-height: 100%; /* Ensures images fit within the height of the banner */
-  max-width: 100%; /* Each image will not exceed 45% of the banner width */
+  max-width: 90%; /* Each image will not exceed 45% of the banner width */
   object-fit: contain; /* Maintains the aspect ratio */
   /* margin: 0 10px; Adds some spacing between the images */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover animations */
+}
+
+.experience .experience_child:hover {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+  cursor: pointer; /* Change cursor to indicate interactivity */
 }
 
 .education {
@@ -165,19 +200,33 @@ a:hover {
   align-items: center;
   /* height: 200px; Sets a fixed height for the banner */
   overflow: hidden;
+  padding-bottom: 20px;
+}
+
+.education img:first-child {
+  max-width: 100%;
 }
 
 .education img {
   max-height: 100%; /* Ensures images fit within the height of the banner */
-  max-width: 100%; /* Each image will not exceed 45% of the banner width */
+  max-width: 90%; /* Each image will not exceed 45% of the banner width */
   object-fit: contain; /* Maintains the aspect ratio */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover animations */
   /* margin: 0 10px; Adds some spacing between the images */
+}
+
+.education .education_child:hover {
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); /* Shadow on hover */
+  transform: scale(1.05); /* Slightly enlarge the image on hover */
+  cursor: pointer; /* Change cursor to indicate interactivity */
 }
 
 .awards {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-direction: column;
   /* height: 200px; Sets a fixed height for the banner */
   overflow: hidden;
 }
