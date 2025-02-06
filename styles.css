@@ -99,18 +99,36 @@ a:hover {
 }
 
 .intro {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  /* height: 200px; Sets a fixed height for the banner */
-  border-radius: 8px 8px 0 0;
-  overflow: hidden;
+  position: relative; /* Create a positioning context for the link */
+  display: inline-block; /* Ensure the image's size is respected */
+  padding-bottom: 30px;
 }
-.intro svg {
-  width: 100%; /* Make the SVG take the full width of the container */
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Remove any inline spacing issues */
+.intro img {
+  max-height: 100%; /* Ensures images fit within the height of the banner */
+  max-width: 100%; /* Each image will not exceed 45% of the banner width */
+  object-fit: contain;
 }
+
+.link-overlay {
+  position: absolute;
+  top: 23%; /* Adjust to match "Prof. Julian McAuley's" position */
+  left: 62%; /* Adjust to match "Prof. Julian McAuley's" position */
+  width: 34%; /* Cover the text width */
+  height: 16%; /* Cover the text height */
+  cursor: pointer;
+  z-index: 10; /* Ensure the clickable link stays on top */
+  background-color: rgba(255, 255, 255, 0); /* Transparent background */
+  text-decoration: none;
+  border-radius: 10px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth hover animations */
+}
+
+.link-overlay:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /* Add a soft shadow on hover */
+  transform: scale(1.05); /* Slightly enlarge for emphasis */
+  cursor: pointer; /* Ensure it looks clickable */
+}
+
 .publication {
   display: flex;
   justify-content: space-evenly;
@@ -142,7 +160,8 @@ a:hover {
 
 .education {
   display: flex;
-  justify-content: space-evenly;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   /* height: 200px; Sets a fixed height for the banner */
   overflow: hidden;
